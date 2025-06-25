@@ -1,8 +1,8 @@
 /// <reference types="@angular/localize" />
 
-import { AppComponent } from './app/app.component';
-import { appConfig } from './app/app.config';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { App } from './app/app';
 
-bootstrapApplication(AppComponent, appConfig)
+bootstrapApplication(App, appConfig)
   .catch((err) => console.error(err));

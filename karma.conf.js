@@ -1,21 +1,18 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['jasmine'],
     plugins: [
-      require('@angular-devkit/build-angular/plugins/karma'),
-      require('@chiragrupani/karma-chromium-edge-launcher'),
-      require('karma-chrome-launcher'),
-      require('karma-coverage'),
       require('karma-jasmine'),
-      require('karma-jasmine-html-reporter')
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
     ],
     client: {
-      jasmine: {},
-      clearContext: false
+      jasmine: {}
     },
     jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
+      suppressAll: true
     },
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/ephemera'),
@@ -23,23 +20,10 @@ module.exports = function (config) {
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }
-      ],
-      check: {
-        emitWarning: false,
-        gloabl: {
-          statements: 75,
-          branches: 75,
-          functions: 75,
-          lines: 75,
-          excludes: []
-        }
-      }
+      ]
     },
     reporters: ['progress', 'kjhtml'],
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome', 'Edge'],
+    browsers: ['Chrome'],
     restartOnFileChange: true
   });
 };

@@ -10,7 +10,7 @@ module.exports = tseslint.config(
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
       ...tseslint.configs.stylistic,
-      ...angular.configs.tsRecommended,
+      ...angular.configs.tsRecommended
     ],
     processor: angular.processInlineTemplates,
     rules: {
@@ -19,25 +19,25 @@ module.exports = tseslint.config(
         {
           type: "attribute",
           prefix: "app",
-          style: "camelCase",
-        },
+          style: "camelCase"
+        }
       ],
       "@angular-eslint/component-selector": [
         "error",
         {
           type: "element",
           prefix: "app",
-          style: "kebab-case",
-        },
-      ],
-    },
+          style: "kebab-case"
+        }
+      ]
+    }
   },
   {
     files: ["**/*.html"],
     extends: [
       ...angular.configs.templateRecommended,
-      ...angular.configs.templateAccessibility,
+      ...angular.configs.templateAccessibility
     ],
-    rules: {},
+    rules: {}
   }
 );
